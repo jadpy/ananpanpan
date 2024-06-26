@@ -1,0 +1,1699 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({
+Name = " いやん♡",
+        HidePremium = false,
+        IntroText = "あんあんぱんぱん♡",
+        SaveConfig = true,
+        ConfigFolder = "OrionTest"
+    })
+
+local ProTab = Window:MakeTab({
+        Name = "へんたい",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+ProTab:AddButton({
+        Name = "vfly",
+        Callback = function()
+
+loadstring(game:HttpGet("https://pastebin.com/raw/MHE1cbWF"))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "座標3000万",
+        Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(30000000, 30000000, 30000000)
+end
+end
+          end    
+})
+
+ProTab:AddButton({
+        Name = "掴んだ物を集める",
+        Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(1, 10, 1)
+end
+end
+          end    
+})
+
+ProTab:AddButton({
+        Name = "無敵",
+        Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/creepstu/fuzzy-octo-giggle/main/Source'))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "Ghostハブ",
+        Callback = function()
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+          end   
+})
+
+ProTab:AddButton({
+        Name = "IY",
+        Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "奈落",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBroken/main/script"))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "ものじんプレミアム版",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP%20(Modified).lua"))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "物人最強スクリプト",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Oxwoey/ElysiumHub/main/oxwoey.lua", true))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "普通のものじんスクリプト",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "自作",
+        Callback = function()
+
+-- this script loads when u execute it in to your executer I put nameless admin into this script aswell for fun"
+local userinputs = game:GetService("UserInputService")
+local action = game:GetService("ContextActionService")
+local w = game:GetService("Workspace")
+local r = game:GetService("RunService")
+local d = game:GetService("Debris")
+local strength = 800
+
+w.ChildAdded:Connect(function(model)
+    if model.Name == "GrabParts" then
+        local part_to_impulse = model["GrabPart"]["WeldConstraint"].Part1
+
+        if part_to_impulse then
+            print("Part found!")
+
+            local inputObj
+            local velocityObj = Instance.new("BodyVelocity", part_to_impulse)
+            local c1, c2, c3
+
+            velocityObj.MaxForce = Vector3.new(0,0,0)
+
+            while inputObj == nil and model.Parent do
+                for _, button in pairs(game.Players.LocalPlayer.PlayerGui["ContextActionGui"]:GetDescendants()) do
+                    if button:IsA("ImageLabel") then
+                        if button.Image == "http://www.roblox.com/asset/?id=9603678090" then
+                            inputObj = button.Parent
+                            print(inputObj)
+                        end
+                    end
+                end
+
+                                r.Heartbeat:Wait()
+            end
+
+                        if inputObj then
+                                c1 = inputObj.MouseButton1Up:Connect(function()
+                                        print("Launched!")
+                                        velocityObj.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                                        velocityObj.Velocity = workspace.CurrentCamera.CFrame.lookVector * strength
+                    end)
+
+                    c2 = inputObj.MouseButton1Down:Connect(function()
+                        print("Launched!")
+                        velocityObj.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                        velocityObj.Velocity = workspace.CurrentCamera.CFrame.lookVector * strength
+                    end)
+                        end
+
+
+            c3 = model:GetPropertyChangedSignal("Parent"):Connect(function()
+                if not model.Parent then
+                                        c3:Disconnect()
+                    d:AddItem(velocityObj, 1)
+
+                    if c1 then
+                        c1:Disconnect()
+                        if c2 then
+                            c2:Disconnect()
+                        end
+                    end
+                end
+            end)
+        end
+    end
+end)
+          end    
+})
+
+ProTab:AddButton({
+        Name = "座標分かる",
+        Callback = function()
+
+local S = Instance.new("ScreenGui")
+local L = Instance.new("Frame")
+local D = Instance.new("Frame")
+local T = Instance.new("TextButton")
+local X = Instance.new("TextBox")
+local Z = Instance.new("TextBox")
+local Y = Instance.new("TextBox")
+local V = Instance.new("TextLabel")
+local H = Instance.new("TextLabel")
+local C = Instance.new("TextButton")
+
+--- This sets the PlaceHolderText to the players current CFrame ---
+local P = game.Players.LocalPlayer.Character.HumanoidRootPart
+local CF = P.CFrame
+local Cx, Cy, Cz, m11, m12, m13, m21, m22, m23, m31, m32, m33 = CF:components()
+--- This sets the PlaceHolderText to the players current CFrame ---
+
+S.Name = "S"
+S.Parent = game:WaitForChild("CoreGui")
+S.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+L.Name = "L"
+L.Parent = S
+L.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+L.BorderColor3 = Color3.fromRGB(110, 110, 110)
+L.Position = UDim2.new(0.321100891, 0, 0.282937378, 0)
+L.Size = UDim2.new(0, 350, 0, 200)
+L.Active = true
+L.Draggable = true
+
+D.Name = "D"
+D.Parent = L
+D.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+D.BorderColor3 = Color3.fromRGB(110, 110, 110)
+D.Position = UDim2.new(0.042857144, 0, 0.200000003, 0)
+D.Size = UDim2.new(0, 320, 0, 145)
+
+T.Name = "T"
+T.Parent = D
+T.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+T.BorderColor3 = Color3.fromRGB(84, 92, 38)
+T.Position = UDim2.new(0.046875, 0, 0.551724136, 0)
+T.Size = UDim2.new(0, 289, 0, 50)
+T.Font = Enum.Font.Gotham
+T.Text = "Teleport"
+T.TextColor3 = Color3.fromRGB(255, 255, 255)
+T.TextSize = 15.000
+T.MouseButton1Click:connect(function()
+P.CFrame = CFrame.new(X.Text, Y.Text, Z.Text)
+end)
+
+X.Name = "X"
+X.Parent = D
+X.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+X.BorderColor3 = Color3.fromRGB(96, 12, 12)
+X.Position = UDim2.new(0.046875, 0, 0.103448279, 0)
+X.Size = UDim2.new(0, 86, 0, 50)
+X.Font = Enum.Font.Gotham
+X.PlaceholderText = Cx
+X.Text = ""
+X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextSize = 14.000
+
+Z.Name = "Z"
+Z.Parent = D
+Z.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Z.BorderColor3 = Color3.fromRGB(96, 12, 12)
+Z.Position = UDim2.new(0.681249976, 0, 0.103448279, 0)
+Z.Size = UDim2.new(0, 86, 0, 50)
+Z.Font = Enum.Font.Gotham
+Z.PlaceholderText = Cz
+Z.Text = ""
+Z.TextColor3 = Color3.fromRGB(255, 255, 255)
+Z.TextSize = 14.000
+
+Y.Name = "Y"
+Y.Parent = D
+Y.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+Y.BorderColor3 = Color3.fromRGB(96, 12, 12)
+Y.Position = UDim2.new(0.365624994, 0, 0.103448279, 0)
+Y.Size = UDim2.new(0, 85, 0, 50)
+Y.Font = Enum.Font.Gotham
+Y.PlaceholderText = Cy
+Y.Text = ""
+Y.TextColor3 = Color3.fromRGB(255, 255, 255)
+Y.TextSize = 14.000
+
+V.Name = "V"
+V.Parent = L
+V.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+V.BackgroundTransparency = 1.000
+V.BorderSizePixel = 0
+V.Position = UDim2.new(0.042857144, 0, 0, 0)
+V.Size = UDim2.new(0, 140, 0, 40)
+V.Font = Enum.Font.GothamBold
+V.Text = "o u s e V 3 r m"
+V.TextColor3 = Color3.fromRGB(255, 255, 255)
+V.TextSize = 14.000
+
+H.Name = "H"
+H.Parent = L
+H.BackgroundColor3 = Color3.fromRGB(186, 3, 3)
+H.BackgroundTransparency = 1.000
+H.BorderSizePixel = 0
+H.Position = UDim2.new(0.042857144, 0, 0, 0)
+H.Size = UDim2.new(0, 25, 0, 40)
+H.Font = Enum.Font.GothamBold
+H.Text = "H"
+H.TextColor3 = Color3.fromRGB(186, 3, 3)
+H.TextSize = 16.000
+
+C.Name = "C"
+C.Parent = L
+C.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+C.BackgroundTransparency = 1.000
+C.BorderSizePixel = 0
+C.Position = UDim2.new(0.885714352, 0, 0, 0)
+C.Size = UDim2.new(0, 40, 0, 40)
+C.Font = Enum.Font.GothamBold
+C.Text = "X"
+C.TextColor3 = Color3.fromRGB(255, 255, 255)
+C.TextSize = 14.000
+C.MouseButton1Click:connect(function()
+S:Destroy()
+end)
+
+--- This auto-updates the PlaceHolderText to the players current CFrame ---
+while true do
+  function update ()
+    local P = game.Players.LocalPlayer.Character.HumanoidRootPart
+    local CF = P.CFrame
+    local Cx, Cy, Cz, m11, m12, m13, m21, m22, m23, m31, m32, m33 = CF:components()
+    X.PlaceholderText = math.floor(Cx+0.5)
+    Y.PlaceholderText = math.floor(Cy+0.5)
+    Z.PlaceholderText = math.floor(Cz+0.5)
+  end
+  pcall ( update )
+  wait()
+end
+--- This auto-updates the PlaceHolderText to the players current CFrame ---
+          end    
+})
+
+ProTab:AddButton({
+        Name = "アンチ",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV2/main/SCRIPTHUBV2", true))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "壁貫通",
+        Callback = function()
+
+local Workspace = game:GetService("Workspace")
+local CoreGui = game:GetService("CoreGui")
+local Players = game:GetService("Players")
+local Noclip = Instance.new("ScreenGui")
+local BG = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local Toggle = Instance.new("TextButton")
+local StatusPF = Instance.new("TextLabel")
+local Status = Instance.new("TextLabel")
+local Credit = Instance.new("TextLabel")
+local Plr = Players.LocalPlayer
+local Clipon = false
+
+Noclip.Name = "Noclip"
+Noclip.Parent = game.CoreGui
+
+BG.Name = "BG"
+BG.Parent = Noclip
+BG.BackgroundColor3 = Color3.new(0.0980392, 0.0980392, 0.0980392)
+BG.BorderColor3 = Color3.new(0.0588235, 0.0588235, 0.0588235)
+BG.BorderSizePixel = 2
+BG.Position = UDim2.new(0.149479166, 0, 0.82087779, 0)
+BG.Size = UDim2.new(0, 210, 0, 127)
+BG.Active = true
+BG.Draggable = true
+
+Title.Name = "Title"
+Title.Parent = BG
+Title.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+Title.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.BorderSizePixel = 2
+Title.Size = UDim2.new(0, 210, 0, 33)
+Title.Font = Enum.Font.Highway
+Title.Text = "Noclip"
+Title.TextColor3 = Color3.new(1, 1, 1)
+Title.FontSize = Enum.FontSize.Size32
+Title.TextSize = 30
+Title.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Title.TextStrokeTransparency = 0
+
+Toggle.Parent = BG
+Toggle.BackgroundColor3 = Color3.new(0.266667, 0.00392157, 0.627451)
+Toggle.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
+Toggle.BorderSizePixel = 2
+Toggle.Position = UDim2.new(0.152380958, 0, 0.374192119, 0)
+Toggle.Size = UDim2.new(0, 146, 0, 36)
+Toggle.Font = Enum.Font.Highway
+Toggle.FontSize = Enum.FontSize.Size28
+Toggle.Text = "Toggle"
+Toggle.TextColor3 = Color3.new(1, 1, 1)
+Toggle.TextSize = 25
+Toggle.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Toggle.TextStrokeTransparency = 0
+
+StatusPF.Name = "StatusPF"
+StatusPF.Parent = BG
+StatusPF.BackgroundColor3 = Color3.new(1, 1, 1)
+StatusPF.BackgroundTransparency = 1
+StatusPF.Position = UDim2.new(0.314285725, 0, 0.708661377, 0)
+StatusPF.Size = UDim2.new(0, 56, 0, 20)
+StatusPF.Font = Enum.Font.Highway
+StatusPF.FontSize = Enum.FontSize.Size24
+StatusPF.Text = "オン:"
+StatusPF.TextColor3 = Color3.new(1, 1, 1)
+StatusPF.TextSize = 20
+StatusPF.TextStrokeColor3 = Color3.new(0.333333, 0.333333, 0.333333)
+StatusPF.TextStrokeTransparency = 0
+StatusPF.TextWrapped = true
+
+Status.Name = "Status"
+Status.Parent = BG
+Status.BackgroundColor3 = Color3.new(1, 1, 1)
+Status.BackgroundTransparency = 1
+Status.Position = UDim2.new(0.580952346, 0, 0.708661377, 0)
+Status.Size = UDim2.new(0, 56, 0, 20)
+Status.Font = Enum.Font.Highway
+Status.FontSize = Enum.FontSize.Size14
+Status.Text = "オフ"
+Status.TextColor3 = Color3.new(0.666667, 0, 0)
+Status.TextScaled = true
+Status.TextSize = 14
+Status.TextStrokeColor3 = Color3.new(0.180392, 0, 0.431373)
+Status.TextWrapped = true
+Status.TextXAlignment = Enum.TextXAlignment.Left
+
+Credit.Name = "Credit"
+Credit.Parent = BG
+Credit.BackgroundColor3 = Color3.new(1, 1, 1)
+Credit.BackgroundTransparency = 1
+Credit.Position = UDim2.new(0.195238099, 0, 0.866141737, 0)
+Credit.Size = UDim2.new(0, 128, 0, 17)
+Credit.Font = Enum.Font.SourceSans
+Credit.FontSize = Enum.FontSize.Size18
+Credit.Text = "Created by KingLuna"
+Credit.TextColor3 = Color3.new(1, 1, 1)
+Credit.TextSize = 16
+Credit.TextStrokeColor3 = Color3.new(0.196078, 0.196078, 0.196078)
+Credit.TextStrokeTransparency = 0
+Credit.TextWrapped = true
+
+Toggle.MouseButton1Click:connect(function()
+        if Status.Text == "off" then
+                Clipon = true
+                Status.Text = "on"
+                Status.TextColor3 = Color3.new(0,185,0)
+                Stepped = game:GetService("RunService").Stepped:Connect(function()
+                        if not Clipon == false then
+                                for a, b in pairs(Workspace:GetChildren()) do
+                if b.Name == Plr.Name then
+                for i, v in pairs(Workspace[Plr.Name]:GetChildren()) do
+                if v:IsA("BasePart") then
+                v.CanCollide = false
+                end end end end
+                        else
+                                Stepped:Disconnect()
+                        end
+                end)
+        elseif Status.Text == "on" then
+                Clipon = false
+                Status.Text = "off"
+                Status.TextColor3 = Color3.new(170,0,0)
+        end
+end)
+          end    
+})
+
+local ProTab = Window:MakeTab({
+        Name = "ブロブマン",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+ProTab:AddButton({
+        Name = "高速上下回転",
+        Callback = function()
+
+local gui = Instance.new("ScreenGui")
+gui.IgnoreGuiInset = true
+gui.ResetOnSpawn = false
+gui.Parent = game.Players.LocalPlayer.PlayerGui
+
+local button = Instance.new("TextButton")
+button.Text = "Rotate"
+button.Size = UDim2.new(0, 150, 0, 50)
+button.Position = UDim2.new(0, 10, 1, -60)
+button.AnchorPoint = Vector2.new(0, 1)
+button.BackgroundColor3 = Color3.fromRGB(173, 216, 230) -- MistyBlue色
+button.Parent = gui
+
+-- ボタンがクリックされたときの処理
+button.MouseButton1Click:Connect(function()
+    -- 乗っている乗り物を取得する
+    local character = game.Players.LocalPlayer.Character
+    if character then
+        local humanoid = character:FindFirstChildOfClass("Humanoid")
+        local seatPart = humanoid and humanoid.SeatPart
+        if seatPart then
+            local vehicle = seatPart.Parent
+            if vehicle then
+                -- 乗り物を永遠に順番に高速に回転させる
+                while true do
+                    for i = 1, 3 do
+                        vehicle:SetPrimaryPartCFrame(vehicle.PrimaryPart.CFrame * CFrame.Angles(math.rad(60), 0, 0))
+                        wait(0.0001) -- 0.0001秒待つ（超高速化）
+                    end
+                end
+            end
+        end
+    end
+end)
+          end    
+})
+
+
+local ProTab = Window:MakeTab({
+        Name = "アンチスクリプト",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+ProTab:AddButton({
+        Name = "アンチキックフライ",
+        Callback = function()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+local camera = game.Workspace.CurrentCamera
+
+while wait(0.1) do
+    local currentPosition = humanoidRootPart.Position
+    local forwardDirection = camera.CFrame.LookVector
+    local rightDirection = camera.CFrame.RightVector
+    local upDirection = Vector3.new(0, 1, 0)
+    local downDirection = Vector3.new(0, -1, 0)
+    local newPosition = currentPosition
+
+    -- 歩いてる方向に3mTP
+    newPosition = newPosition + forwardDirection * 3
+
+    -- 向いている方向に5mずつTP
+    if forwardDirection:Dot(upDirection) > 0.5 then
+        newPosition = newPosition + upDirection * 5
+    end
+
+    -- 上を向いた時に上にTP
+    if forwardDirection:Dot(upDirection) > 0.5 then
+        newPosition = newPosition + upDirection * 5
+    end
+
+    -- 下を向いた時に下にTP
+    if forwardDirection:Dot(downDirection) > 0.5 then
+        newPosition = newPosition + downDirection * 5
+    end
+
+    -- 後ろを向いた時に下にTP
+    if forwardDirection:Dot(-upDirection) > 0.5 then
+        newPosition = newPosition + downDirection * 5
+    end
+
+    character:SetPrimaryPartCFrame(CFrame.new(newPosition))
+end
+
+          end    
+})
+ProTab:AddButton({
+        Name = "アンチチートテレポートBypass",
+        Callback = function()
+
+local cords = Vector3.new(x,y,z)
+--script
+local plr = game:service("Players").LocalPlayer
+function Time(targetpos)
+    local tme = (targetpos - plr.Character.HumanoidRootPart.Position).Magnitude / plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed
+    return tme
+end
+
+local tween_s = game:service("TweenService")
+local info = TweenInfo.new(Time(cords),Enum.EasingStyle.Quad)
+function tp(...)
+local tic_k = tick();
+local params = {...};
+local cframe = CFrame.new(params[1],params[2],params[3]);
+local tween,err = pcall(function()
+local tween = tween_s:Create(plr.Character["HumanoidRootPart"],info,{CFrame=cframe});
+      tween:Play();
+end)
+   if not tween then return err end
+end
+
+tp(cords)
+
+
+          end    
+})
+
+ProTab:AddButton({
+        Name = "アンチバン",
+        Callback = function()
+
+getgenv().credit = "HERE_CREDIT_NAME"
+
+
+if getgenv().credit == "HERE_CREDIT_NAME" then
+        print"script loaded"
+else
+        game.Players.LocalPlayer:Kick("Credit Is LOI!, Dont Touch IT")
+end
+          end    
+})
+
+ProTab:AddButton({
+
+Name = "アンチフリング",
+        Callback = function()
+        local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Player = Players.LocalPlayer
+
+RunService.Stepped:Connect(function()
+    for _, CoPlayer in pairs(Players:GetChildren()) do
+        if CoPlayer ~= Player and CoPlayer.Character then
+            for _, Part in pairs(CoPlayer.Character:GetChildren()) do
+                if Part.Name == "HumanoidRootPart" then
+                    Part.CanCollide = false
+                end
+            end
+        end
+    end
+
+    for _, Accessory in pairs(workspace:GetChildren()) do
+        if Accessory:IsA("Accessory") and Accessory:FindFirstChildWhichIsA("Part") then
+            Accessory:FindFirstChildWhichIsA("Part"):Destroy()
+        end
+    end
+end)
+          end    
+})
+
+ProTab:AddButton({
+        Name = "アンチチートBypass",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xen8054/AntiCheatBypassPLUS/main/Script"))()
+          end    
+})
+
+ProTab:AddButton({
+        Name = "ランダムスクリプトハブ",
+        Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Davicoderliner/davi-hub-V2.3/main/davi.lua",true))()
+          end    
+})
+
+        local MainTab = Window:MakeTab({
+Name = "掴むモット",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
+local enabled = false
+
+-- MainTabにトグルスイッチを追加
+MainTab:AddToggle({
+    Name = "キル掴む",
+    Default = false,
+    Callback = function(Value)
+        enabled = Value
+        print(Value)
+    end
+})
+
+-- WorkspaceのChildAddedイベントを監視
+game:GetService("Workspace").ChildAdded:Connect(function(model)
+    if enabled and model.Name == "GrabParts" then
+        local part_to_impulse = model["GrabPart"]["WeldConstraint"].Part1
+        if part_to_impulse then
+            part_to_impulse.Parent:BreakJoints()    
+        end    
+    end    
+end)
+
+local enabled = false
+local connection
+
+-- MainTabにトグルスイッチを追加
+MainTab:AddToggle({
+    Name = "上に上がる掴む",
+    Default = false,
+    Callback = function(Value)
+        enabled = Value
+        if enabled then
+            if not connection then
+                connection = game:GetService("Workspace").ChildAdded:Connect(function(model)
+                    if model.Name == "GrabParts" then
+                        local part_to_impulse = model:FindFirstChild("GrabPart")
+                        if part_to_impulse and part_to_impulse:FindFirstChild("WeldConstraint") then
+                            local bodyVelocity = Instance.new("BodyVelocity")
+                            bodyVelocity.Parent = part_to_impulse
+                            bodyVelocity.Velocity = Vector3.new(0, 200, 0) -- 吹っ飛ばす方向や速度を設定できます
+                            bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0) -- 必要に応じて調整してください
+                        end
+                    end
+                end)
+            end
+        else
+            if connection then
+                connection:Disconnect()
+                connection = nil
+            end
+        end
+        print("Sky Grab! enabled:", enabled)
+    end
+})
+
+MainTab:AddToggle({
+    Name = "下に下がる掴む",
+    Default = false,
+    Callback = function(Value)
+        enabled = Value
+        if enabled then
+            if not connection then
+                connection = game:GetService("Workspace").ChildAdded:Connect(function(model)
+                    if model.Name == "GrabParts" then
+                        local part_to_impulse = model:FindFirstChild("GrabPart")
+                        if part_to_impulse and part_to_impulse:FindFirstChild("WeldConstraint") then
+                            local bodyVelocity = Instance.new("BodyVelocity")
+                            bodyVelocity.Parent = part_to_impulse
+                            bodyVelocity.Velocity = Vector3.new(0, -200, 0) -- 吹っ飛ばす方向や速度を設定できます
+                            bodyVelocity.MaxForce = Vector3.new(0, math.huge, 0) -- 必要に応じて調整してください
+                        end
+                    end
+                end)
+            end
+        else
+            if connection then
+                connection:Disconnect()
+                connection = nil
+            end
+        end
+        print("Sky Grab! enabled:", enabled)
+    end
+})
+
+local enabled = false
+
+-- MainTabにトグルスイッチを追加
+MainTab:AddToggle({
+    Name = "回転掴む",
+    Default = false,
+    Callback = function(Value)
+        enabled = Value
+        print(Value)
+    end
+})
+
+-- WorkspaceのChildAddedイベントを監視
+game:GetService("Workspace").ChildAdded:Connect(function(model)
+    if enabled and model.Name == "GrabParts" then
+        local part_to_impulse = model["GrabPart"]["WeldConstraint"].Part1
+        if part_to_impulse then
+            -- 回転させるための力を加える
+            local bodyAngularVelocity = Instance.new("BodyAngularVelocity")
+            bodyAngularVelocity.Parent = part_to_impulse
+            bodyAngularVelocity.AngularVelocity = Vector3.new(0, 10000, 0) -- 回転の速度を設定（Y軸周りに1000度/秒）
+            bodyAngularVelocity.MaxTorque = Vector3.new(0, math.huge, 0) -- 必要に応じてトルクを調整
+
+            -- モデルの全ての子要素を削除する
+            for _, child in ipairs(model:GetChildren()) do
+                child:Destroy()
+            end
+        end
+    end
+end)
+
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+
+local function HandleGrabParts(model)
+    local part_to_impulse = model.GrabPart.WeldConstraint.Part1
+    if part_to_impulse then
+        local humanoid = part_to_impulse.Parent:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            -- プレイヤーを上にテレポート
+            local character = part_to_impulse.Parent
+            local rootPart = character:FindFirstChild("HumanoidRootPart")
+            if rootPart then
+                -- テレポート先の上の位置を計算
+                local upVector = Vector3.new(0, 60, 0) -- 上に20単位移動するベクトル
+                local newPosition = rootPart.Position + upVector
+
+                -- プレイヤーをテレポート
+                rootPart.CFrame = CFrame.new(newPosition)
+
+                -- プレイヤーを浮遊状態に設定する
+                humanoid.PlatformStand = true
+                humanoid.AutoRotate = false
+
+                -- しゃがまないようにする
+                humanoid.AutoCrouch = false
+                humanoid.Sit = false
+
+                -- 触れた人がragdoll化しないようにする
+                humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+            end
+        end
+    end
+end
+
+-- 新しい子が追加されたときのイベント
+Workspace.ChildAdded:Connect(function(model)
+    if model.Name == "GrabParts" then
+        -- Toggleの状態に応じて動作を切り替える
+        local toggleState = MainTab.ToggleState or false  -- デフォルトはfalse
+
+        if toggleState then
+            HandleGrabParts(model)
+        end
+    end
+end)
+
+-- 初期のマップ探索
+for _, model in pairs(Workspace:GetChildren()) do
+    if model.Name == "GrabParts" then
+        -- Toggleの状態に応じて動作を切り替える
+        local toggleState = MainTab.ToggleState or false  -- デフォルトはfalse
+
+        if toggleState then
+            HandleGrabParts(model)
+        end
+    end
+end
+
+-- Toggleの状態が変わったときに呼ばれるコールバック関数
+MainTab:AddToggle({
+    Name = "テレポートアップ",
+    Default = false,
+    Callback = function(Value)
+        MainTab.ToggleState = Value
+        print("Toggleの状態が変更されました:", Value)
+    end    
+})
+
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+
+local function HandleGrabParts(model)
+    local part_to_impulse = model.GrabPart.WeldConstraint.Part1
+    if part_to_impulse then
+        local humanoid = part_to_impulse.Parent:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+            -- プレイヤーを上にテレポート
+            local character = part_to_impulse.Parent
+            local rootPart = character:FindFirstChild("HumanoidRootPart")
+            if rootPart then
+                -- テレポート先の上の位置を計算
+                local upVector = Vector3.new(0, -100, 0) -- 上に20単位移動するベクトル
+                local newPosition = rootPart.Position + upVector
+
+                -- プレイヤーをテレポート
+                rootPart.CFrame = CFrame.new(newPosition)
+
+                -- プレイヤーを浮遊状態に設定する
+                humanoid.PlatformStand = true
+                humanoid.AutoRotate = false
+
+                -- しゃがまないようにする
+                humanoid.AutoCrouch = false
+                humanoid.Sit = false
+
+                -- 触れた人がragdoll化しないようにする
+                humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+            end
+        end
+    end
+end
+
+-- 新しい子が追加されたときのイベント
+Workspace.ChildAdded:Connect(function(model)
+    if model.Name == "GrabParts" then
+        -- Toggleの状態に応じて動作を切り替える
+        local toggleState = MainTab.ToggleState or false  -- デフォルトはfalse
+
+        if toggleState then
+            HandleGrabParts(model)
+        end
+    end
+end)
+
+-- 初期のマップ探索
+for _, model in pairs(Workspace:GetChildren()) do
+    if model.Name == "GrabParts" then
+        -- Toggleの状態に応じて動作を切り替える
+        local toggleState = MainTab.ToggleState or false  -- デフォルトはfalse
+
+        if toggleState then
+            HandleGrabParts(model)
+        end
+    end
+end
+
+-- Toggleの状態が変わったときに呼ばれるコールバック関数
+MainTab:AddToggle({
+    Name = "テレポートダウン",
+    Default = false,
+    Callback = function(Value)
+        MainTab.ToggleState = Value
+        print("Toggleの状態が変更されました:", Value)
+    end    
+})
+
+local PS = game:GetService("Players")
+local Player = PS.LocalPlayer
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local RS = game:GetService("ReplicatedStorage")
+local CE = RS:WaitForChild("CharacterEvents")
+local R = game:GetService("RunService")
+local BeingHeld = Player:WaitForChild("IsHeld")
+local PlayerScripts = Player:WaitForChild("PlayerScripts")
+
+--[[ Remotes ]]
+local StruggleEvent = CE:WaitForChild("Struggle")
+
+--[[ Anti-Explosion ]]
+local explosionListener
+
+--[[ Anti-grab ]]
+local grabListener
+
+--[[ Function to enable/disable Anti-Explosion and Anti-Grab ]]
+local function toggleDefense(enabled)
+    if enabled then
+        -- Enable Anti-Explosion
+        explosionListener = workspace.DescendantAdded:Connect(function(v)
+            if v:IsA("Explosion") then
+                v.BlastPressure = inf
+            end
+        end)
+
+        -- Enable Anti-Grab
+        grabListener = BeingHeld.Changed:Connect(function(C)
+            if C == true then
+                local char = Player.Character
+
+                if BeingHeld.Value == true then
+                    local Event;
+                    Event = R.RenderStepped:Connect(function()
+                        if BeingHeld.Value == true then
+                            char["HumanoidRootPart"].AssemblyLinearVelocity = Vector3.new()
+                            StruggleEvent:FireServer(Player)
+                        elseif BeingHeld.Value == false then
+                            Event:Disconnect()
+                        end
+                    end)
+                end
+            end
+        end)
+    else
+        -- Disable Anti-Explosion
+        if explosionListener then
+            explosionListener:Disconnect()
+            explosionListener = nil
+        end
+
+        -- Disable Anti-Grab
+        if grabListener then
+            grabListener:Disconnect()
+            grabListener = inf
+        end
+    end
+end
+
+-- Initial setup: disabled by default
+toggleDefense(false)
+
+-- Toggle callback function
+local aaTab = Window:MakeTab({
+    Name = "アンチBring、アンチ掴む",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+aaTab:AddToggle({
+    Name = "アンチ掴む",
+    Default = false,
+    Callback = function(enabled)
+        toggleDefense(enabled)
+        print("Anti Grab:", enabled)
+    end
+})
+
+local SlotTab = Window:MakeTab({
+        Name = "テレポート",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+SlotTab:AddButton({
+        Name = "Slot1",
+        Callback = function()
+                      -- スクリプト: 指定した座標にテレポートする
+
+local player = game.Players.LocalPlayer
+
+-- テレポート先の座標を指定 (ここを変更してください)
+local targetPosition = Vector3.new(54, -7, -115)
+
+-- プレイヤーキャラクターが存在する場合のみテレポートを実行する
+if player.Character then
+    player.Character:MoveTo(targetPosition)
+end
+
+          end    
+})
+
+SlotTab:AddButton({
+        Name = "Slot2",
+        Callback = function()
+                      -- スクリプト: 指定した座標にテレポートする
+
+local player = game.Players.LocalPlayer
+
+-- テレポート先の座標を指定 (ここを変更してください)
+local targetPosition = Vector3.new(170, -8, 527)
+
+-- プレイヤーキャラクターが存在する場合のみテレポートを実行する
+if player.Character then
+    player.Character:MoveTo(targetPosition)
+end
+
+          end    
+})
+
+SlotTab:AddButton({
+        Name = "Slot3",
+        Callback = function()
+                      -- スクリプト: 指定した座標にテレポートする
+
+local player = game.Players.LocalPlayer
+
+-- テレポート先の座標を指定 (ここを変更してください)
+local targetPosition = Vector3.new(-213, 83, 421)
+
+-- プレイヤーキャラクターが存在する場合のみテレポートを実行する
+if player.Character then
+    player.Character:MoveTo(targetPosition)
+end
+
+          end    
+})
+
+SlotTab:AddButton({
+        Name = "Slot4",
+        Callback = function()
+                      -- スクリプト: 指定した座標にテレポートする
+
+local player = game.Players.LocalPlayer
+
+-- テレポート先の座標を指定 (ここを変更してください)
+local targetPosition = Vector3.new(-540, -6, -40)
+
+-- プレイヤーキャラクターが存在する場合のみテレポートを実行する
+if player.Character then
+    player.Character:MoveTo(targetPosition)
+end
+
+          end    
+})
+
+local FakeTab = Window:MakeTab({
+        Name = "Fake",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+FakeTab:AddButton({
+        Name = "Fake coin",
+        Callback = function()
+        local skolko = 1919454507211919191999999999999999999999999999999999999999999999999999999
+
+        game.Players[game.Players.LocalPlayer.Name].PlayerGui.MenuGui.TopRight.CoinsFrame.CoinsDisplay.Coins.Text = skolko
+          end    
+})
+
+local ProTab = Window:MakeTab({
+        Name = "スピード、ジャンプ",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
+})
+
+ProTab:AddButton({
+        Name = "スピード50",
+        Callback = function()
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 16
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =50
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 20 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 100 then
+                       debug.setconstant(v, Number, 1000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+
+           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 50
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+ProTab:AddButton({
+        Name = "スピード100",
+        Callback = function()
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 100
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =100
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 300 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 1000 then
+                       debug.setconstant(v, Number, 2000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+
+           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 100
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+ProTab:AddButton({
+        Name = "スピード200",
+        Callback = function()
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 200
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =100
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 300 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 1000 then
+                       debug.setconstant(v, Number, 2000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+
+           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 200
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+ProTab:AddButton({
+        Name = "ジャンプ50",
+        Callback = function()
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 16
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 20 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 100 then
+                       debug.setconstant(v, Number, 1000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 50
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+ProTab:AddButton({
+        Name = "ジャンプ100",
+        Callback = function()
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 16
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 20 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 100 then
+                       debug.setconstant(v, Number, 1000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 100
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+ProTab:AddButton({
+        Name = "ジャンプ200",
+        Callback = function()
+
+
+
+--[[ Variables ]]
+local PS = game:GetService("Players")
+local LocalPlayer = PS.LocalPlayer
+local GameMt = getrawmetatable(game)
+setreadonly(GameMt, false)
+local OldIndex = GameMt.__index
+
+GameMt.__index = function(Self, Key)
+if not checkcaller() and Self then
+       if Key == "WalkSpeed" then
+   return 16
+       elseif Key == "JumpPower" then
+           return 50
+       end
+end
+
+return OldIndex(Self, Key)
+end
+
+
+
+function Int()
+   for i,v in pairs(debug.getregistry()) do
+
+       if type(v) == "function" and not is_synapse_function(v) then
+           local Values = debug.getupvalues(v)
+           for a,b in pairs(Values) do
+               if type(b) == "number" and b == 20 then
+                   debug.setupvalue(v, a, 30)
+               end
+           end
+
+           local Constants = debug.getconstants(v)
+           for Number,Value in pairs(Constants) do
+               if type(Value) == "number" then
+                   if Value == 100 then
+                       debug.setconstant(v, Number, 1000)
+                       print("Set new Magnitude limit!")
+                   end
+                   if Value == 750 then
+                       debug.setconstant(v, Number, 1350)
+                       print("Set new throw limit!")
+                   end
+               end
+           end
+       end
+
+   end
+
+   spawn(function()
+       while wait() do
+           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 200
+           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+               break
+           end
+       end
+   end)
+
+end
+
+Int()
+
+LocalPlayer.CharacterAdded:Connect(function()
+   repeat wait() until LocalPlayer.Character
+   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
+   Int()
+end)
+
+print("Better reach and faster speed loaded!")
+          end    
+})
+
+local ProTab = Window:MakeTab({
+	Name = "座標",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+ProTab:AddButton({
+	Name = "座標1000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(10000000, 10000000, 10000000)
+end
+end
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "座標2000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(20000000, 20000000, 20000000  )
+end
+end
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "座標3000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(30000000, 30000000, 30000000)
+end
+end
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "座標4000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(40000000, 40000000, 40000000)
+end
+end
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "座標5000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(50000000, 50000000, 50000000)
+end
+end
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "座標6000万",
+	Callback = function()
+
+for _,part in pairs(game:GetService("Workspace"):GetDescendants()) do
+if game.Players.LocalPlayer.Character:FindFirstChild('Head') and part:IsA("BasePart" or "UnionOperation" or "Model") and part.Anchored == false and not part:IsDescendantOf(game.Players.LocalPlayer.Character) and part.Name == "Torso" == false and part.Name == "Head" == false and part.Name == "Right Arm" == false and part.Name == "Left Arm" == false and part.Name == "Right Leg" == false and part.Name == "Left Leg" == false and part.Name == "HumanoidRootPart" == false then
+local ForceInstance = Instance.new("BodyPosition")
+for i,c in pairs(part:GetChildren()) do
+if c:IsA("BodyPosition") or c:IsA("BodyGyro") then
+c:Destroy()
+end
+end
+ForceInstance.Parent = part
+ForceInstance.MaxForce = Vector3.new(math.huge, math.huge, math.huge
+)ForceInstance.Position = Vector3.new(60000000, 60000000, 6000000)
+end
+end
+  	end    
+})
