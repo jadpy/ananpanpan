@@ -95,6 +95,22 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/H20CalibreYT/SystemBr
 })
 
 ProTab:AddButton({
+	Name = "物人昔のやつ",
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/spacexrandom/Lua/2d97e6f8104d201ccda537d69a4c6f39f621f80e/FlingThingsAndPeople"))()
+  	end    
+})
+
+ProTab:AddButton({
+	Name = "物人ちょっと強め",
+	Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/neeloves/lua/9142891805a658a4eb2f19250f5866853e9151b9/TryHardPremium.lua"))()
+  	end    
+})
+
+ProTab:AddButton({
         Name = "ものじんプレミアム版",
         Callback = function()
 
