@@ -98,7 +98,7 @@ ProTab:AddButton({
         Name = "ものじんプレミアム版",
         Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP%20(Modified).lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/e79e99607201c26506262c2dd45c331b9cda2e7f/FTAP%20(Modified)"))()
           end    
 })
 
