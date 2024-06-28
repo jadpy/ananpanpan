@@ -1704,19 +1704,19 @@ end
 
 -- tab
 local m_Tab = Window:MakeTab({
-    Name = "メニュー",
+    Name = "main",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local t_Tab = Window:MakeTab({
-    Name = "テレポート",
+    Name = "teleport",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
 
 local p_Tab = Window:MakeTab({
-    Name = "プレイヤー",
+    Name = "player",
     Icon = "rbxassetid://4483345998",
     PremiumOnly = false
 })
