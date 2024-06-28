@@ -114,7 +114,7 @@ ProTab:AddButton({
         Name = "普通のものじんスクリプト",
         Callback = function()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/scripts/main/FTAP.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BlizTBr/test/main/a"))()
           end    
 })
 
