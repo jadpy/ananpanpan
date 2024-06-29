@@ -742,7 +742,7 @@ local function KickPlayer()
 end
 
 MainTab:AddToggle({
-    Name = "Kick with Line (Beta)",
+    Name = "キック掴む (ベータ)",
     Default = false,
     Callback = function(Value)
         CanKick = Value
@@ -775,7 +775,7 @@ end
 game.Players.LocalPlayer.CharacterAdded:Connect(OnCharacterAdded)
 
 MainTab:AddToggle({
-    Name = "Control Grab Script",
+    Name = "コントロール掴む",
     Default = true,
     Callback = function(enabled)
         ToggleGrabbingScript(enabled)
