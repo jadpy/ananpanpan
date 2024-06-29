@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BlizTBr/scripts/main/Orion%20X')))()
 
 local Window = OrionLib:MakeWindow({
 Name = " いやん♡",
@@ -686,6 +686,102 @@ Icon = "rbxassetid://4483345998",
 PremiumOnly = false
 })
 
+getgenv().CanKick = false;
+
+local function KickPlayer()
+    local player = game:GetService("Players").LocalPlayer
+
+    local function KickEnabler(character)
+        local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+        local ragdollTouchedHitbox = humanoidRootPart and humanoidRootPart:FindFirstChild("RagdollTouchedHitbox")
+        if ragdollTouchedHitbox then
+            ragdollTouchedHitbox.CanQuery = CanKick
+            ragdollTouchedHitbox.CanCollide = CanKick
+            ragdollTouchedHitbox.Size = CanKick and Vector3.new(4.875, 6.625, 3.75) or Vector3.new(2.875, 3.625, 1.75)
+        end
+    end
+
+    local function ApplyKickToPlayers()
+        for _, otherPlayer in ipairs(game:GetService("Players"):GetPlayers()) do
+            if otherPlayer ~= player and otherPlayer.Character then
+                KickEnabler(otherPlayer.Character)
+            end
+        end
+    end
+
+    local function CheckForPlayers()
+        while true do
+            ApplyKickToPlayers()
+            wait(0.01)
+        end
+    end
+
+    player.CharacterAdded:Connect(function(character)
+        KickEnabler(character)
+    end)
+
+    game:GetService("Players").PlayerAdded:Connect(function(newPlayer)
+        newPlayer.CharacterAdded:Connect(function(character)
+            if newPlayer ~= player then
+                KickEnabler(character)
+            end
+        end)
+    end)
+
+    if player.Character then
+        KickEnabler(player.Character)
+    end
+
+    spawn(CheckForPlayers)
+
+    if CanKick then
+        print("Kicking enabled")
+    else
+        print("Kicking disabled")
+    end
+end
+
+MainTab:AddToggle({
+    Name = "Kick with Line (Beta)",
+    Default = false,
+    Callback = function(Value)
+        CanKick = Value
+    end
+})
+
+KickPlayer()
+--КОНЕЦ
+
+local grabbingScriptEnabled = false
+
+local function ToggleGrabbingScript(enabled)
+    grabbingScriptEnabled = enabled
+    local grabbingScript = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("GrabbingScript", true)
+    if grabbingScript then
+        grabbingScript.Disabled = not enabled
+    end
+end
+
+local function OnCharacterAdded(character)
+    if not grabbingScriptEnabled then
+        ToggleGrabbingScript(false)
+    end
+end
+
+if game.Players.LocalPlayer.Character then
+    OnCharacterAdded(game.Players.LocalPlayer.Character)
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(OnCharacterAdded)
+
+MainTab:AddToggle({
+    Name = "Control Grab Script",
+    Default = true,
+    Callback = function(enabled)
+        ToggleGrabbingScript(enabled)
+    end
+})
+
 local enabled = false
 
 -- MainTabにトグルスイッチを追加
@@ -1111,485 +1207,6 @@ FakeTab:AddButton({
 })
 
 local ProTab = Window:MakeTab({
-        Name = "スピード、ジャンプ",
-        Icon = "rbxassetid://4483345998",
-        PremiumOnly = false
-})
-
-ProTab:AddButton({
-        Name = "スピード50",
-        Callback = function()
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 16
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =50
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 20 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 100 then
-                       debug.setconstant(v, Number, 1000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-
-           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 50
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-ProTab:AddButton({
-        Name = "スピード100",
-        Callback = function()
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 100
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =100
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 300 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 1000 then
-                       debug.setconstant(v, Number, 2000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-
-           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 100
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-ProTab:AddButton({
-        Name = "スピード200",
-        Callback = function()
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 200
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed =100
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 300 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 1000 then
-                       debug.setconstant(v, Number, 2000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-
-           LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").WalkSpeed = 200
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-ProTab:AddButton({
-        Name = "ジャンプ50",
-        Callback = function()
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 16
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 20 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 100 then
-                       debug.setconstant(v, Number, 1000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 50
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-ProTab:AddButton({
-        Name = "ジャンプ100",
-        Callback = function()
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 16
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 20 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 100 then
-                       debug.setconstant(v, Number, 1000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 100
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-ProTab:AddButton({
-        Name = "ジャンプ200",
-        Callback = function()
-
-
-
---[[ Variables ]]
-local PS = game:GetService("Players")
-local LocalPlayer = PS.LocalPlayer
-local GameMt = getrawmetatable(game)
-setreadonly(GameMt, false)
-local OldIndex = GameMt.__index
-
-GameMt.__index = function(Self, Key)
-if not checkcaller() and Self then
-       if Key == "WalkSpeed" then
-   return 16
-       elseif Key == "JumpPower" then
-           return 50
-       end
-end
-
-return OldIndex(Self, Key)
-end
-
-
-
-function Int()
-   for i,v in pairs(debug.getregistry()) do
-
-       if type(v) == "function" and not is_synapse_function(v) then
-           local Values = debug.getupvalues(v)
-           for a,b in pairs(Values) do
-               if type(b) == "number" and b == 20 then
-                   debug.setupvalue(v, a, 30)
-               end
-           end
-
-           local Constants = debug.getconstants(v)
-           for Number,Value in pairs(Constants) do
-               if type(Value) == "number" then
-                   if Value == 100 then
-                       debug.setconstant(v, Number, 1000)
-                       print("Set new Magnitude limit!")
-                   end
-                   if Value == 750 then
-                       debug.setconstant(v, Number, 1350)
-                       print("Set new throw limit!")
-                   end
-               end
-           end
-       end
-
-   end
-
-   spawn(function()
-       while wait() do
-           if LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").JumpPower = 200
-           elseif not LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
-               break
-           end
-       end
-   end)
-
-end
-
-Int()
-
-LocalPlayer.CharacterAdded:Connect(function()
-   repeat wait() until LocalPlayer.Character
-   repeat wait() until LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
-   repeat wait() until LocalPlayer.Character:FindFirstChild("GrabbingScript")
-   Int()
-end)
-
-print("Better reach and faster speed loaded!")
-          end    
-})
-
-local ProTab = Window:MakeTab({
 	Name = "座標",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
@@ -1828,4 +1445,54 @@ p_Tab:AddButton({
             changeFOV(fovValue)
         end
     end    
+})
+  
+  --functions
+p_Tab:AddSlider({
+    Name = "speed",
+    Min = 16,
+    Max = 1000,
+    Default = 5,
+    Color = Color3.fromRGB(255,255,255),
+    Increment = 1,
+    ValueName = "speed",
+    Callback = function(speed)
+        HackedWalkSpeed = speed
+
+        local Plrs = game:GetService("Players")
+        local MyPlr = Plrs.LocalPlayer
+        local MyChar = MyPlr.Character
+
+        if MyChar then
+            local Hum = MyChar.Humanoid
+            Hum.Changed:connect(function()
+                Hum.WalkSpeed = HackedWalkSpeed
+            end)
+            Hum.WalkSpeed = HackedWalkSpeed
+        end
+
+        MyPlr.CharacterAdded:connect(function(Char)
+            MyChar = Char
+            repeat wait() until Char:FindFirstChild("Humanoid")
+            local Hum = Char.Humanoid
+            Hum.Changed:connect(function()
+                Hum.WalkSpeed = HackedWalkSpeed
+            end)
+            Hum.WalkSpeed = HackedWalkSpeed
+        end)
+    end
+})
+  
+  p_Tab:AddSlider({
+	Name = "JumpPower",
+	Min = 20,
+	Max = 10000,
+	Default = 15,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "power",
+	Callback = function(Value)
+		print(Value)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
 })
